@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "RegisterUser";
+}
+
+<h2>Nueva Cuenta</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 form-box">
+                <div class="form-top">
+                    <div class="form-top-left">
+                        <h3>Registrate con tu direccion de email y / o tu telefono</h3>
+                    </div>
+                    <div class="form-top-right">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                </div>
+                <div class="form-bottom">
+                    <form role="form" action="" method="post">
+
+                        <div class="form-group">
+                       
+                            <input placeholder="Correo electrónico" name="Correo" class="form-username form-control" id="Correo" required>
+                        </div>
+
+                        <div class="form-group">
+                       
+                            <input placeholder="Confirmar Correo electrónico" name="ConfirmarCorreo" class="form-username form-control" id="ConfirmarCorreo" required>
+                        </div>
+
+                        <div class="form-group" >
+                            <select class="form-control" >
+                                <option>+55</option>
+                                <option>+45</option>
+                                <option>+33</option>
+                                <option>+54</option>
+                                <option>+32</option>
+                            </select>
+                            <input placeholder="Teléfono" name="Telefono" class="form-username form-control" id="Telefono" required sta>
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Contraseña" name="Telefono" class="form-username form-control" id="Contraseña" required type="password">
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Confirmar Contraseña" name="Telefono" class="form-username form-control" id="Contraseña" required type="password">
+                        </div>
+
+                        <div class="form-group" style="padding-right:55%">
+                            <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color:#efc23a;">Registrate</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Registrate Linkedin</button>
+                        </div>
+                    </form>
+
+
+
+                   
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+}

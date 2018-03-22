@@ -1,0 +1,70 @@
+﻿@model AccesoBolsaTrabajo3.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+
+
+
+@*<h4>Use otro servicio para iniciar sesión.</h4>*@
+
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                No hay servicios de autenticación externos configurados. Consulte <a href="http://go.microsoft.com/fwlink/?LinkId=403804">este artículo</a>
+                para obtener más información acerca de la configuración de esta aplicación ASP.NET para admitir el inicio de sesión mediante servicios externos.
+            </p>
+        </div>
+    }
+    else {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                @*<p>
+                    @foreach (AuthenticationDescription p in loginProviders) {
+                        <button type="submit"  class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Inicie sesión con su cuenta @p.Caption">@p.AuthenticationType</button>
+                    }
+                </p>*@
+                <!--Seccion de redes sociales.-->
+                <div class="login-container text-center">
+                    <div class="job-name border-none">
+                        <img src="~/assets/images/icon-arrow.png">
+                        <span>Inicio de sesión con tu red social</span>
+                    </div>
+                    <div class="row">
+                        <div class="btn-facebook">
+                            <div class="btn-logo"><div class="valign"><img src="~/assets/images/facebook2.png"></div></div>
+                            <button type="submit" class="btn btn-default" style=" height:46px;width:100%; text-align: center;line-height: 46px;color: #fff; background: #3b5998;border-bottom: 2px solid #627aad;margin-bottom: 10px; cursor:pointer;" id="Facebook" name="provider" value="Facebook" title="Registrate/Inicia sesión con tu cuenta Facebook">Inicia sesión con tu cuenta de Facebook</button>
+                        </div>
+                        <div class="btn-google">
+                            <div class="btn-logo"><div class="valign"><img src="~/assets/images/google.png"></div></div>
+                            <button type="submit" class="btn btn-default" style="height: 46px;width: 100%;text-align: center;line-height: 46px;color: #fff; text-align:center; color:#fff; background: #dd4b39;border-bottom: 2px solid #de8f85;margin-bottom: 10px; cursor:pointer;" id="Google" name="provider" value="Google" title="Registrate/Inicia sesión con tu cuenta Google">Inicia sesión con tu cuenta de Google</button>
+                        </div>
+
+                        <div class="btn-linkedin">
+                            <div class="btn-logo"><div class="valign"><img src="~/assets/images/linkedin.png"></div></div>
+                            <button type="submit" class="btn btn-default" style="height:46px;width:100%;line-height:46px;color:#fff; text-align:center;color:#fff;background:#1a80b7;border-color: #9bc4db;margin-bottom: 10px; cursor:pointer;" id="LinkedIn" name="provider" value="LinkedIn" title="Registrate/Inicia sesión con tu cuenta LinkedIn">Inicia sesión con tu cuenta de LinkedIn</button>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="btn-linkedin">
+                    <div class="btn-logo" style="height:46px;width: 100%;text-align: center;line-height: 46px;color: #fff; background:#355089;position: absolute;height: 44px;width: 50px;"> <div class="valign"><img src="~/assets/images/facebook2.png" /></div></div>
+                    <button type="submit" class="btn btn-default" style="height:46px;width:100%;text-align: center;line-height: 46px;color: #fff; background: #3b5998;border-bottom: 2px solid #627aad;margin-bottom: 10px;" id="Facebook" name="provider" value="Facebook" title="Registrate/Inicia sesión con tu cuenta Facebook">Inicia sesión con tu cuenta de Facebook</button>
+                </div>
+                <div class="btn-linkedin">
+                    <div class="btn-logo" style="height:46px;width: 100%;text-align: center;line-height: 46px;color: #fff; background: #c74333;position: absolute;height: 44px;width: 50px;"><div class="valign"><img src="~/assets/images/google.png" /></div></div>
+                    <button type="submit" class="btn btn-default" style="height: 46px;width: 100%;text-align: center;line-height: 46px;color: #fff; text-align:center; color:#fff; background: #dd4b39;border-bottom: 2px solid #de8f85;margin-bottom: 10px;" id="Google" name="provider" value="Google" title="Registrate/Inicia sesión con tu cuenta Google">Inicia sesión con tu cuenta de Google</button>
+                </div>
+                <div class="btn-linkedin">
+                    <div class="btn-logo" style="height:46px;width: 100%;text-align: center;line-height: 46px;color: #fff; background: #1a80b7;position: absolute;height: 44px;width: 50px;"><div class="valign"><img src="~/assets/images/linkedin.png" /></div></div>
+                    <button type="submit" class="btn btn-default" style="height:46px;width:100%;line-height:46px;color:#fff; text-align:center;color:#fff;background:#1a80b7;border-color: #9bc4db;margin-bottom: 10px;" id="LinkedIn" name="provider" value="LinkedIn" title="Registrate/Inicia sesión con tu cuenta LinkedIn">Inicia sesión con tu cuenta de LinkedIn</button>
+                </div>*@
+
+             </div>
+                        @*<section>
+                            Los datos personales de contacto solicitados y en su caso los patrimoniales o sensibles que no quiera compartir en su Curriculum Vitae (»Los datos»), son tratados para fines de contacto en su caso de existir una vacante y para iniciar el proceso de reclutamiento y, en su caso, de selección por la empresa Humres S.A. de CV. con domicilio en Avenida Juárez 660, Colonia Centro en Guadalajara, Jalisco y/o las empresas controladoras de esta última y/o nuestras empresas filiales y/o subsidiarias y/o aquellos terceros que, por la naturaleza de sus trabajos o funciones tengan la necesidad de tratar y/o utilizar sus datos personales cuando tenga fines relacionados con ofertas de empleo. Consulta completo el aviso de privacidad en http://galeon.com/avisodeprivacidad/
+                        </section>*@
+        }
+    }
+}

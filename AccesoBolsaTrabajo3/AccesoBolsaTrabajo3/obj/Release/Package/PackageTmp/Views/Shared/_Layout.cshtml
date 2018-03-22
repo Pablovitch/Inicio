@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMSA-Bolsa de trabajo</title>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/responsive")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#004f9d;">*@
+    @*<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>*@
+    @*<ul class="nav navbar-nav navbar-left">
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li><img src="~/assets/images/logo.png" /></li>
+        </ul>*@
+    @*<div class="navbar-collapse collapse">*@
+    @*<ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+            <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+        </ul>*@
+    @*@Html.Partial("_LoginPartial")*@
+    @*</div>*@
+    <div class="social-bar hidden-sm-down">
+        <div class="container-fluid">
+            <div class="btn-top float-right border-left">
+            </div>
+            <div class="btn-top float-right"><img src="~/assets/images/linkedin.png" /></div>
+            <div class="btn-top float-right"><img src="~/assets/images/twitter.png" /></div>
+            <div class="btn-top float-right border-left"><img src="~/assets/images/facebook.png" /></div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="menu">
+                    <button id="nav-icon" type="button" class="navbar-toggle blue">
+                        <div class="nav-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+                <div class="logo"><img src="~/assets/images/logo.png" /></div>
+
+                <div class="hidden-sm-down">
+
+                    <div class="picture-profile"><img src="~/assets/images/photo-default.png" /></div>
+                    <div class="name-profile text-uppercase color-white">@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @style = "color:white; font:bold;" })</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="footer">
+        <div class="footer-first">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="~/assets/images/logo-big.png" class="float-left imagen" />
+
+                        <div class="datos-footer">
+                            <div class="menu-footer color-white">
+                                <ul>
+                                    <li>Contacto</li>
+                                    <li>ESR</li>
+                                    <li>Mejora continua</li>
+                                    <li>Empleos</li>
+                                    <li>Servicios</li>
+                                    <li>¿Quienes somos?</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="phone-info color-white">
+                                <img src="~/assets/images/icon-phone.png">
+                                01 800 7013959
+                            </div>
+
+                            <div class="social-footer">
+                                <img src="~/assets/images/facebook.png">
+                                <img src="~/assets/images/twitter.png">
+                                <img src="~/assets/images/linkedin.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-last color-white text-center">
+            &copy; @DateTime.Now.Year. DAMSA Todos los derechos reservados.   V. 20180315_13.55
+        </div>
+    </div>
+    @*<div class="container">
+            <div class="row">
+                <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light" style="background-color:#004f9d;">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <img src="~/assets/images/logo.png" alt="Damsa">
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="form-inline  my-2 my-lg-0">
+                                @Html.Partial("_LoginPartial")
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

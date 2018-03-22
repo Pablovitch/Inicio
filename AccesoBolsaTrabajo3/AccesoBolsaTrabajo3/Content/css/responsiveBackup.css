@@ -1,0 +1,195 @@
+@media (max-width: 991px) {
+	 .padding-991 {
+		padding-right: 0px;
+		padding-left: 0px;
+	 }
+	 .general-information-container, .personal-information-container, .cv-about-container, .cv-experience-container,
+	 .cv-formation, .cv-knowledge, .cv-cursos, .cv-certificaciones, .cv-lang {
+		border-right: none;
+	 }
+
+	 .personal-information-container {
+		border-bottom: 1px solid #d9e3f0;
+	 }
+	 .profile-percent {
+		max-width: 550px;
+		margin: 0 auto;
+		padding: 30px;
+	position: relative;
+	 }
+
+	.col-filters {
+		width: 100%;
+	}
+	.info-part1 {
+		width: 250px;
+		height: 120px;
+	}
+	.info-part1 .text-graphic {
+		float: left !important;
+		margin-left: 10px;
+	}
+	.col-100 {
+		float: left;
+	}
+	.top-filters {
+		margin-top: 0px;
+		height: 45px;
+	}
+
+	.search-filters {
+		border-left: 1px solid #e2e3e7;
+	}
+	.input-search {
+		width: calc(100% - 90px);
+	}
+	.col-results {
+		width: 100%;
+	}
+}
+@media (max-width: 767px) {
+	.logo {
+		position: absolute;
+		right: 15px;
+	}
+	.menu-lateral {
+		height: calc(100vh - 64px);
+		top: 64px;
+		width: calc(100% - 45px);
+		overflow-y: auto;
+	}
+	.picture-profile {
+		left: 25px;
+		right: initial;
+	}
+	.name-profile {
+		left: 85px;
+		right: initial;
+	}
+	.btn-principal {
+		height: 45px;
+	}
+	.btn-principal  img{
+		max-height: 30px;
+		width: 25px;
+		display: inline-block;
+	}
+	.btn-principal.text-center {
+		text-align: left !important;
+		padding: 10px 26px;
+	}
+	.btn-lateral, .btn-lateral.active {
+		width: 100%;
+	}
+	.general-information, .personal-information, .cv-about, .cv-experience, .cv-formation, .cv-knowledge, .cv-cursos,
+	.cv-certificaciones, .cv-lang {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.general-information-photo {
+		margin: 10px auto;
+	}
+	.filter-result {
+		font-size: 14px;
+	}
+	.job-location, .job-category, .job-location-int, .job-category-int {
+		width: calc((100% - 128px) / 2);
+		margin-bottom: 2px;
+	}
+	.job-details {
+		position: absolute;
+		right: 0px;
+		bottom: 40px;
+	}
+	.job-description {
+		margin-bottom: 40px;
+	}
+
+	.job-name {
+		font-size: 18px;
+	}
+	.contenido {
+		height: auto;
+		overflow-y: initial;
+	}
+	
+
+}
+@media (max-width: 575px) {
+	.legend {
+		font-size: 14px;
+	}
+	.upload {
+		width: 90%;
+		left: 5%;
+	}
+	.job-location, .job-location-int {
+		width: calc(100% - 124px);
+	}
+	.job-category, .job-category-int {
+		width: 100%;
+	}
+	.job-details {
+		bottom: 76px;
+	}
+	.be-notificated .title, .search-error .title {
+	font-size: 35px;
+	line-height: 35px;
+	}
+	.btn-edit {
+		position: relative;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+	.box-registro .link-blue.float-right {
+		float: none !important;
+		margin-bottom: 10px;
+	}
+	
+}
+@media (max-width: 480px) {
+	.social-bar-mobile .btn-top {
+		width: 44px;
+	}
+	.social-bar-mobile .btn-top.btn-notify {
+		width: 55px;
+	}
+	.btn-edit img {
+		width: 30px;
+	}
+	.job-category, .job-date, .job-date-int, .job-location, .job-location-int, .job-details {
+		width: 100%;
+	}
+}
+@media (max-width: 400px) {
+	.menu-lateral {
+		width: 100%;
+	}
+	.social-bar-mobile .btn-top {
+		width: 40px;
+	}
+	.social-bar-mobile .btn-top.btn-notify {
+		
+	}
+}
+@media (max-width: 350px) {
+	.job-name img {
+		width: 12px;
+	}
+	.job-name {
+		font-size: 14px;
+	}
+	
+	.job-details {
+		bottom: initial;
+		position: relative;
+	}
+	.logo img {
+		width: 180px;
+	}
+}
+@media (max-width: 320px) { 
+	.btn-red, .btn-green { 
+		width: 100%;
+	}
+}

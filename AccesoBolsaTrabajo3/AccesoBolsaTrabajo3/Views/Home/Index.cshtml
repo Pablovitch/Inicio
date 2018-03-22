@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "DAMSA-Bolsa de Trabajo";
+}
+
+<div class="yellow-search">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-7">
+                <div class="title-yellow-search">
+                    Tenemos la mejor vacante para ti
+                </div>
+                <div class="subtitle-yellow-search">
+                    Grandes empresas buscan tu talento
+                </div>
+                <div class="arrow-yellow-search"></div>
+            </div>
+            <div class="col-5">
+                <div class="search-form-container">
+                    <div class="row first-row">
+                        <div class="col-1">
+                            <div class="valign"><img src="~/assets/images/icon-letter.png"></div>
+                        </div>
+
+                        <div class="col-11">
+
+                            <input class="input-search" placeholder="Palabra Clave">
+                            <div class="btn-search">Buscar</div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                        </div>
+                        <div class="col-11 text-center color-white">
+                            Filtro Avanzado <img src="~/assets/images/arrow-filters.png">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <div class="valign"><img src="~/assets/images/icon-location.png"></div>
+                        </div>
+
+
+                        <div class="col-11">
+                            <div class="styled-select slate">
+                                <select>
+                                    <option>Estado</option>
+                                    <option>Option</option>
+                                    <option>Option</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <div class="valign"><img src="~/assets/images/icon-key.png"></div>
+                        </div>
+
+                        <div class="col-11">
+                            <div class="styled-select slate">
+                                <select>
+                                    <option>Categoría</option>
+                                    <option>Option</option>
+                                    <option>Option</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+
+                        </div>
+
+                        <div class="col-11">
+                            <div class="styled-select slate">
+                                <select>
+                                    <option>Escolaridad</option>
+                                    <option>Option</option>
+                                    <option>Option</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row last-row">
+                        <div class="col-1">
+
+                        </div>
+
+                        <div class="col-11 text-left color-white" style="padding-left: 10px;">
+                            Puedes buscar por: palabra clave, localidad, categoria de oficio o puesto
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="damsa-office">
+    <div class="leyenda color-white">
+        <img src="~/assets/images/icon-alert.png">
+        Bolsa de trabajo DAMSA usa cookies para mejorar y optimizar tu experiencia de usuario. Al continuar utilizando nuestro sitio, aceptas nuestras políticas de privacidad y uso de cookies.
+      <p>Para obtener más información te invitamos a consultar <a href="http://galeon.com/avisodeprivacidad/skaveo"> aviso de privacidad</a> , políticas de uso y cookies.
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-damsa-office color-white">
+                    TE ESPERAMOS EN <br />nuestras oficinas
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pleca"></div>
+
+<div class="be-notificated text-center">
+    <div class="title color-grey">¿Te notificamos a tu correo?</div>
+    <div class="subtitle color-blue">Crea tu perfil y recibe las más recientes vacantes a tu email</div>
+
+    <div class="btn-yellow text-uppercase color-white">@Html.ActionLink("Crea tu perfil", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</div>
+</div>

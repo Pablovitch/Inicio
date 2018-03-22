@@ -1,0 +1,51 @@
+﻿@model AccesoBolsaTrabajo3.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "Registro";
+}
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+
+<script type="text/javascript">
+    function CuentaCreada() {
+        swal("Buen trabajo", "Acceso correcto", "Satisfactorio");
+    }
+</script>
+
+
+<h2>@ViewBag.Title.</h2>
+<h3>Asocie su cuenta <strong>@ViewBag.LoginProvider.</strong></h3>
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <p class="text-info">
+        Se autenticó correctamente con <strong>@ViewBag.LoginProvider</strong>.
+        Se utilizará su correo <strong>@ViewBag.EmailUser</strong> para darlo de alta en el sistema.<br />
+        De click en el boton de <strong>Login</strong> para continuar con su proceso.
+    </p>
+    <div class="form-group">
+        <div style="visibility:hidden">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <input type="submit"  class="btn btn-success" value="Siguiente" onclick="CuentaCreada();" />
+          @*<button class="btn btn-success" onclick="CuentaCreada();">Accesar</button>*@
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,103 @@
+﻿@using AccesoBolsaTrabajo3.Models
+@model AccesoBolsaTrabajo3.Models.RegisterViewModel
+
+@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/responsive")
+@Scripts.Render("~/bundles/modernizr")
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
+<script src="~/Scripts/jquery-1.11.3.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+
+<script>
+    if (ViewBag.Message != "") {
+        alert(ViewBag.Message);
+    }
+</script>
+
+<div class="row contenido">
+    <div class="login-container text-center">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(m => m.Email, String.Empty)
+            @Html.ValidationMessageFor(m => m.PhoneNumber, String.Empty)
+            @Html.ValidationMessageFor(m => m.Password, String.Empty)
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, String.Empty)
+
+            <div class="job-name border-none">
+                <img src="~/assets/images/icon-arrow.png">
+                <span>Regístrate con tu dirección de email o tu teléfono</span>
+            </div>
+            <div class="login-form-container">
+                <div class="row first-row">
+                    <div class="col-2">
+                        <div class="valign"><img src="~/assets/images/icon-message.png" /></div>
+                    </div>
+                    <div class="col-10">
+                        @Html.TextBoxFor(m => m.Email, new { placeholder = "Correo electrónico", @class = "input-search-complete" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <div class="valign"><img src="~/assets/images/icon-phone.png" /></div>
+                    </div>
+                    <div class="col-4">
+                        <input class="input-search-complete" type="search" placeholder="52" value="52" disabled>
+                    </div>
+                    <div class="col-6">
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { placeholder = "Teléfono a 10 dígitos", @class = "input-search-complete" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="valign"><img src="~/assets/images/icon-key.png" /></div>
+                    </div>
+
+                    <div class="col-10" data-balloon-length="fit" data-balloon="La contraseña debe cumplir con los siguientes requisitos: Mínimo 8 caracteres, Una minúscula (a,b,c,...,z), Una mayúscula (A,B,C,...,Z), Un número (0,1,2,...,9), Un carácter especial (!,#,$,%,&)   Ej. P@ssw0rd" data-balloon-pos="right">
+                        @Html.PasswordFor(m => m.Password, new { placeholder = "Contraseña", @class = "input-search-complete" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="valign"><img src="~/assets/images/icon-key.png" /></div>
+                    </div>
+
+                    <div class="col-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "Confirmar contraseña", @class = "input-search-complete", })
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                Bolsa de trabajo DAMSA usa cookies para mejorar y optimizar tu experiencia de usuario.
+                Al continuar utilizando nuestro sitio, aceptas nuestras políticas de privacidad y uso de cookies.
+                Para obtener más información te invitamos a consultar
+                <a href="http://galeon.com/avisodeprivacidad/skaveo">@Html.LabelFor(m => m.Aviso, new { @style = "cursor:pointer;" })</a> , políticas de uso y cookies.
+            </div>
+                <div class="row">
+                    <input type="submit" style="cursor:pointer;" class="btn-login" value="Regístrate" />
+                </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+}
+
+@*<div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+          <section id="socialLoginForm">
+              @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+          </section>
+    </div>*@
+

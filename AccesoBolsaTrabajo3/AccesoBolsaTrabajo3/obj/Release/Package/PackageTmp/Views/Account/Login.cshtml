@@ -1,0 +1,59 @@
+﻿@using AccesoBolsaTrabajo3.Models
+@model LoginViewModel
+
+@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/responsive")
+@Scripts.Render("~/bundles/modernizr")
+
+<div class="row contenido">
+    <div class="login-container text-center">
+        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="login-container text-center">
+                <div class="job-name border-none">
+                    <img src="~/assets/images/icon-arrow.png">
+                    <span>O con tu dirección de email o tu teléfono</span>
+                </div>
+                <div class="login-form-container">
+                    <div class="row first-row">
+                        <div class="col-2">
+                            <div class="valign"><img src="~/assets/images/icon-message.png" /></div>
+                        </div>
+
+                        <div class="col-10">
+                            @Html.TextBoxFor(m => m.UserName, new { placeholder = "Correo eléctronico o Número de teléfono", @class = "input-search-complete" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="valign"><img src="~/assets/images/icon-key.png" /></div>
+                        </div>
+
+                        <div class="col-10">
+                            @Html.PasswordFor(m => m.Password, new { placeholder = "Contraseña", @class = "input-search-complete" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" class="btn-login" style="cursor:pointer;" value="Iniciar sesión" />
+                    </div>
+
+                    <p style="text-align: center; font-size:larger;">
+                        ¿Aun no tienes cuenta? @Html.ActionLink("Crear nueva cuenta", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                    </p>
+
+                    <p style="text-align: center; font-size:larger;">
+                        @Html.ActionLink("Preguntas frecuentes", "PreguntasFrecuentes")
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+}

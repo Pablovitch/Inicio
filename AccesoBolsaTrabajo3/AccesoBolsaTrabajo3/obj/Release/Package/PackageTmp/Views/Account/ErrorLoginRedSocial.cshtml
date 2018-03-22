@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "¡Oops tu acceso no es correcto!";
+}
+<h2 style="margin-top:10%">@ViewBag.Title.</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        Recuerda que bolsa de trabajo DAMSA te ofrece 3 formas de registro:
+        <ul>
+            <li>
+                Correo Electronico.
+            </li>
+            <li>
+                Teléfono.
+            </li>
+            <li>
+                Red Social.
+            </li>
+        </ul>
+
+        Quizá quieras probar otra forma de acceso haciendo click @Html.ActionLink("aqui", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+
+    </div>
+</div>

@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Register1";
+}
+
+
+<h2>NuevoToken</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 form-box">
+                <div class="form-top">
+                    <div class="form-top-left">
+                        <h3>Datos para  generar Token</h3>
+                    </div>
+                    <div class="form-top-right">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                </div>
+                <div class="form-bottom">
+                    <form role="form" action="" method="post">
+
+
+                        @*<div class="form-group has-error">
+                                  <label for="texto" class="control-label col-xs-2">Cliente ID </label>
+                                  <div class="col-xs-5">
+                                      <input type="text" name="ClienteID" placeholder="" class="form-username form-control" id="ClienteID">
+                                      <span class="help-block"></span>
+                                  </div>
+                            </div>*@
+
+
+                        @*<div class="form-group">
+                                <h4>Cliente ID</h4>
+                                <input type="text" name="ClienteID" placeholder="" class="form-username form-control" id="ClienteID"  required>
+                            </div>*@
+
+
+                        <div class="form-group">
+                            <h4>Cliente Vendedor ID</h4>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="6" name="ClienteVendedorID" placeholder="" class="form-username form-control" id="ClienteVendedorID" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <h4>Empleado Mostrador</h4>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="4" name="EmpleadoIDMostrador" placeholder="" class="form-username form-control" id="EmpleadoIDMostrador" required>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <h4>Sucursal ID</h4>
+                            <select id="InfoSucursalID" class="form-control">
+
+                                @foreach (var item in ListaSucursales)
+                                {
+                                    <option value="@item.InfoSucursalID">@item.Descripcion </option>
+
+                                }
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <h4>Producto</h4>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="7" name="Producto" placeholder="" class="form-username form-control" id="Producto" required>
+                        </div>
+
+                        <div class="form-group">
+                            <h4>Precio</h4>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="8" onkeyup="format(this)" placeholder="$00.00" name="Precio" class="form-username form-control" id="Precio" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <h4>Precio Solicitado</h4>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="8" step=0.01 name="PrecioSolicitado" placeholder="$00.00" class="form-username form-control" id="PrecioSolicitado" required>
+                        </div>
+
+                        @*<div class="alert alert-warning" id="Alerta" hidden>
+                                <strong>Denegado!</strong> El precio solicitado no puede ser menor al costo promedio. Modifique el precio para generar el token
+                            </div>*@
+
+                        <div class="form-group">
+                            <h4>Cantidad</h4>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="5" name="Cantidad" class="form-username form-control" id="Cantidad" required>
+                        </div>
+
+
+                        @*<div class="form-group">
+                                <h4>Fecha de Solicitud</h4>
+                                <input type="date" name="FechaSolicitud" placeholder="" class="form-username form-control" id="FechaSolicitud">
+                            </div>*@
+
+                        <div class="form-group">
+                            <h2>Token Generado</h2>
+                            <label id="ContenedorToken" style="font-size:x-large;background-color:white; color:red;  padding-right: 5%;"></label>
+                        </div>
+
+
+                        <input type="button" id="btn" onclick="generarToken()" value="Autoriza" style="background-color:red;color:white" class="btn btn-default" />
+
+                        <a href="@Url.Action("Index" )" class="btn btn-primary"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Cancelar</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+
+
+
+
+
+
