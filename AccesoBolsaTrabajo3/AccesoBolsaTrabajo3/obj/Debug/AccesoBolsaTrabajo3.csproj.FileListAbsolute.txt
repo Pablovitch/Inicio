@@ -654,3 +654,4 @@ C:\Users\damsa.jcervantes\Documents\AccesoBolsaTrabajo3\AccesoBolsaTrabajo3\bin\
 C:\Users\damsa.jcervantes\Documents\AccesoBolsaTrabajo3\AccesoBolsaTrabajo3\bin\Microsoft.IdentityModel.Tokens.xml
 C:\Users\damsa.jcervantes\Documents\AccesoBolsaTrabajo3\AccesoBolsaTrabajo3\bin\System.IdentityModel.Tokens.Jwt.xml
 C:\Users\damsa.jcervantes\Documents\AccesoBolsaTrabajo3\AccesoBolsaTrabajo3\bin\Twilio.xml
+C:\Users\damsa.jcervantes\Documents\AccesoBolsaTrabajo3\AccesoBolsaTrabajo3\obj\Debug\AccesoBolsaTrabajo3.csprojResolveAssemblyReference.cache

@@ -184,7 +184,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/12/2018 13:01:56</publishTime>
     </File>
     <File Include="bin/AccesoBolsaTrabajo3.dll">
-      <publishTime>03/15/2018 13:55:48</publishTime>
+      <publishTime>03/30/2018 09:34:13</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>02/22/2013 08:43:40</publishTime>
